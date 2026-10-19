@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AXIOM Pricing Module</title>
+<link rel="icon" href="/static/nious-logo.png">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="brand">
+    <img src="/static/nious-logo.png" alt="NIOUS" class="logo">
+    <div class="title"><b>AXIOM Pricing Module</b><span>Hybrid GraphRAG · grounded explanations</span></div>
+  </div>
+  <div class="bar-right">
+    <div id="status" class="pills" aria-live="polite"></div>
+    <button class="ghost" id="open-drawer" type="button">Track A results</button>
+  </div>
+</header>
+
+<section class="ask">
+  <form id="form" autocomplete="off">
+    <input id="q" type="text" maxlength="300" placeholder="Ask about a price, a Track A result, or the data…" aria-label="Question">
+    <button class="primary" id="run" type="submit">Run</button>
+  </form>
+  <div class="ask-tools">
+    <label class="switch" title="With safeguards: three samples, evidence check, corrective retrieval, wrong-label check and agreement. Without: one sample checked only by the basic verifier.">
+      <input type="checkbox" id="safeguards" checked><span class="slider"></span><span id="safeguards-text">Safeguards on</span>
+    </label>
+    <span id="selected" class="selected" hidden></span>
+    <span class="hint" id="hint"></span>
+  </div>
+  <div id="examples" class="chips"></div>
+</section>
+
+<nav class="arch" id="arch" aria-label="Pipeline progress"></nav>
+
+<main class="work">
+  <div class="stages" id="stages"></div>
+  <aside class="side">
+    <section class="panel" id="answer-panel"><h2>Answer</h2><div id="answer" class="idle">The answer appears here with the evidence behind it.</div></section>
+    <section class="panel" id="eval-panel"><h2>Evaluation</h2><div id="evaluation" class="idle">After the answer, the outcome is scored with the project's own evaluation code.</div></section>
+  </aside>
+</main>
+
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head"><h2>Track A results</h2><button class="ghost" id="close-drawer" type="button">Close</button></div>
+  <p class="muted small">Synthetic outputs of the pricing engine. Pick one to ask about it, or open it to see its structure.</p>
+  <input id="filter" type="search" placeholder="Filter by product, customer, line, id…" aria-label="Filter results">
+  <div id="runs"></div>
+  <details class="add"><summary>Add your own Track A output</summary>
+    <p class="small muted">Paste or load the engine's run object or flat results. A malformed result, or one whose figures do not add up, is refused with the reason.</p>
+    <textarea id="paste" rows="6" spellcheck="false" placeholder='{ "provenance": {...}, "waterfalls": [...], "recommendations": [...] }'></textarea>
+    <div class="row"><input type="file" id="file" accept=".json,application/json"><button class="primary small" id="load-btn" type="button">Load</button></div>
+    <div id="load-msg"></div>
+  </details>
+</aside>
+<div class="scrim" id="scrim" hidden></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

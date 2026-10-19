@@ -1,0 +1,30 @@
+# Environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Local secrets and machine-specific configuration
+.env
+
+# Report tooling and supplied reference files (not part of the code handover)
+rapport/**/.tools/
+rapport/**/build/
+rapport/*.docx
+rapport/*.doc
+rapport/*.pdf
+
+# Data and reports are NOT published (confidential: company data, evaluation
+# references, the knowledge-graph export, design records and the written reports).
+# See data/README.md for what a local checkout needs and how to get it.
+data/*
+!data/README.md
+axiom_pricing_module_Knowledge-graph_PoC.json
+rapport/
+docs/*.json
+
+# Generated or shared artefacts
+*.zip
+*.mp4
+*.log

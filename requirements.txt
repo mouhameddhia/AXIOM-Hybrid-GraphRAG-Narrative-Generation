@@ -1,0 +1,13 @@
+# --- Graph ---
+neo4j>=5.20                  # optional at runtime: only needed for CORPUS_SOURCE=neo4j
+
+# --- Retrieval ---
+rank-bm25>=0.2.2             # lexical (BM25) modality
+sentence-transformers>=3.0   # dense encoder + cross-encoder reranker
+numpy>=1.26
+
+# --- Configuration ---
+python-dotenv>=1.0
+
+# --- Testing ---
+pytest>=8.2

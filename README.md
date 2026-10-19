@@ -21,7 +21,7 @@ the evidence, or the system's own output, cannot be trusted, it **abstains and s
 | | |
 |---|---|
 | **Author** | Mohamed Dhya Shiri, ESPRIT (Tunisia), internship at NIOUS GmbH, 1 July to 31 August 2026 |
-| **Stack** | Python 3.13 · BM25 · sentence-transformers · Neo4j (optional) · Ollama · FastAPI |
+| **Stack** | Python 3.13 · BM25 · sentence-transformers · Neo4j  · Ollama · FastAPI |
 | **Status** | Deliverables D1 to D6 delivered (English) and D7 (integration) demonstrated end to end; connecting the live pricing engine is the next step |
 | **Data** | Synthetic. Not included in this repository, see [Data availability](#data-availability) |
 
